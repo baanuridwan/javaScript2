@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input {
+      width: 100px;
+      height: 30px;
+      font-size: 18px;
+      margin: 10px;
+      text-align: center;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Calculator</h1>
+
+  <input type="text" id="input1">
+  <input type="text" id="input2">
+
+  <div id="result"></div>
+
+  <div class="buttons">
+    
+    <button onclick="enterNumber(1)">1</button>
+    <button onclick="enterNumber(2)">2</button>
+    <button onclick="enterNumber(3)">3</button>
+    <br>
+    <button onclick="enterNumber(4)">4</button>
+    <button onclick="enterNumber(5)">5</button>
+    <button onclick="enterNumber(6)">6</button>
+    <br>
+    <button onclick="enterNumber(7)">7</button>
+    <button onclick="enterNumber(8)">8</button>
+    <button onclick="enterNumber(9)">9</button>
+    <br>
+    <button onclick="enterNumber(0)">0</button>
+  </div>
+
+  <div class="buttons">
+    <!-- Operation Buttons -->
+    <button onclick="calculate('add')">+</button>
+    <button onclick="calculate('subtract')">-</button>
+    <button onclick="calculate('multiply')">*</button>
+    <button onclick="calculate('divide')">/</button>
+    <button onclick="calculate('sqrt')">√</button>
+    <button onclick="calculate('power')">^</button>
+    <button onclick="calculate('percent')">%</button>
+  </div>
+
+  <script>
+    let firstInputFilled = false;
+
+    function enterNumber(num) {
+      if (!firstInputFilled) {
+        document.getElementById('input1').value = num;
+        firstInputFilled = true;
+      } else {
+        document.getElementById('input2').value = num;
+      }
+    }
+
+    function calculate(operation) {
+      let num1 = parseFloat(document.getElementById('input1').value);
+      let num2 = parseFloat(document.getElementById('input2').value);
+      let result = '';
+
+      if (operation === 'add') {
+        result = num1 + num2;
+      } else if (operation === 'subtract') {
+        result = num1 - num2;
+      } else if (operation === 'multiply') {
+        result = num1 * num2;
+      } else if (operation === 'divide') {
+        result = num1 / num2;
+      } else if (operation === 'sqrt') {
+        result = Math.sqrt(num1);
+      } else if (operation === 'power') {
+        result = Math.pow(num1, num2);
+      } else if (operation === 'percent') {
+        result = (num1 / num2) * 100;
+      }
+
+      document.getElementById('result').innerText = "Result: " + result;
+    }
+  </script>
+
+</body>
+</html>

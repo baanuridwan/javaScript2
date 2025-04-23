@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="add">
+    <button onclick="add()">Add</button> -->
+    <img src="" alt="" id="imageDis">
+    <button onclick="next()">next</button>
+    <button onclick="prev()">prev</button>
+</body>
+</html>
+<script>
+//     //correction
+//     const ages = [19, 22, 19, 24, 20, 25, 26, 25, 24, 23]
+//     //sort
+
+
+
+// if (sortedNum.lenght % 2 === 0){
+//     let midOneIndex = sortedNum.length / 2
+//     let midTwoIndex = midOneIndex - 1
+//     console.log((sortedNum[midOneIndex] + sortedNum[midTwoIndex]))
+// }
+// else{
+//     let middle = Math.floor(sortedNum.length /)
+// }
+
+// //Range
+// console.log(maxAge - minAge);
+
+// //Compare
+// minAve = Math.abs(minAge - averageAge )
+// console.log(minAve) ;
+
+
+
+
+// // const numbers = [1,2,3,4,5]
+// // console.log(numbers.slice());
+// // console.log(numbers.slice(0));
+// // console.log(numbers.slice(1));
+// // console.log(numbers.slice(1, 4));
+console.log(numbers)
+
+// // console.log(numbers.sclice(1, numbers.length - 1));
+// // console.log(numbers.sclice(1, 3));
+// // console.log(numbers.sclice(0, 3));
+
+// // numbers.splice(0, 1)
+// // console.log(numbers) ;
+// // numbers.splice(2, 2, 30, 40)
+// // console.log(numbers) ;
+
+
+// // 1 === "1"
+// // let data = []
+// // function add() {
+// //     let myInput = document.getElementById("myInput")
+// //     database.push(myInput.value) 
+// //     console.log(database) ;
+
+// }
+let imageArr = ["photo.jpeg", "photoTwo.jpeg", "photoThree.jpeg"]
+let myImg = document.getElementById("imageDis")
+let index = 0
+function next() {
+    myImg.src = imageArr[index]
+    if (index === imageArr.length - 1) {
+        index = 0
+    }else{
+        index++
+    }
+}
+</script>
