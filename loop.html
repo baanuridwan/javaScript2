@@ -11,7 +11,85 @@
 </html>
 <script>
     for (let index = 0; index < 20; index++) {
-        const element = array[index];
+        console.log(index);
         
     }
+    for (let index = 20; index >= 0; index--) {
+        console.log(index);
+        
+    }
+    let database = ['Miss Mary', 'Joshua', 'Samuel', 'Great', 'Patrick', 'Ridwan', 'Ayo']
+    for (let index = 0; index <= database.length - 1; index++) {
+        console.log(database[index]);
+        
+    }
+    for (let i = 1; i <= 12; i++) {
+        console.log(`2 * ${i} = ${2 * i}`)
+        
+    }
+    const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+    const newArr = []
+    for (let i = 0; i < countries.length; i++) {
+        newArr.push(countries[i].toUpperCase())
+    }
+        console.log(newArr)
+    
+    for (let index = 0; index < 1; index++) {
+        let line = ""
+        for (let j = 1; j <= 7; j++) {
+            line = line + "#"
+            console.log(line)
+        }
+        
+    }
+
+    let numsArr = [1, ,2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let start = 0
+    for (let i = 0; i < numsArr.length; i++) {
+        start += numsArr[i]
+    }
+    console.log(start);
+
+    let i = 1
+    while (i <= 12) {
+        console.log(`2 * ${i} = ${2 * i}`);
+        i++
+    }
+
+    let int = 1
+    do {
+        console.log(`2 * ${int} = ${2 * int}`)
+        int++
+    } while (int <= 12)
+
+    let teg = numsArr.length - 1
+    do {
+        console.log(numsArr[teg]);
+        teg--
+    } while (teg >= 0)
+
+    let newAr = [9, 6, 3, 5, 1, 8, 2, 4, 7]
+    newAr.sort()
+    for (let index = newAr.length -1; index >= 0; index--) {
+        console.log(newAr[index])
+        
+    }
+
+    latestArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    // for (const element of object) {
+    //     consle.log(element)
+    // }
+
+    for (const int of newArr) {
+        console.log(int);
+    }
+    
+
+    for (const num of latestArr) {
+        console.log(`2 * ${num} = ${2 * num}`)
+    }
+
+
+    
+
 </script>
