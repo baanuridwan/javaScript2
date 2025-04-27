@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <h2>Type a Language:</h2>
+  <input type="text" id="myInput">
+  <button onclick="showClass()">Show Class</button>
+
+  <script>
+    function showClass() {
+      let reactClass = [101, 102, 103, 104, 105];  
+      let javaClass = [201, 202, 203, 204, 205, 206]; 
+      let pythonClass = [301, 302, 303, 304, 305];  
+      let javaClass2 = [401, 402, 403, 404];        
+      let sqlClass = [501, 502, 503, 504];          
+      let phpClass = [601, 602, 603];               
+      let cssClass = [701, 702, 703];               
+
+      let myInput = document.getElementById('myInput').value.toLowerCase();
+
+      if (myInput == "react") {
+        for (let index = 0; index < reactClass.length; index++) {
+          console.log(reactClass[index]);
+        }
+      } 
+      else if (myInput == "javascript") {
+        for (let index = 0; index < javaClass.length; index++) {
+          console.log(javaClass[index]);
+        }
+      }
+      else if (myInput == "python") {
+        for (let index = 0; index < pythonClass.length; index++) {
+          console.log(pythonClass[index]);
+        }
+      }
+      else if (myInput == "java") {
+        for (let index = 0; index < javaClass2.length; index++) {
+          console.log(javaClass2[index]);
+        }
+      }
+      else if (myInput == "sql") {
+        for (let index = 0; index < sqlClass.length; index++) {
+          console.log(sqlClass[index]);
+        }
+      }
+      else if (myInput == "php") {
+        for (let index = 0; index < phpClass.length; index++) {
+          console.log(phpClass[index]);
+        }
+      }
+      else if (myInput == "css") {
+        for (let index = 0; index < cssClass.length; index++) {
+          console.log(cssClass[index]);
+        }
+      }
+      else {
+        console.log("Language not found!");
+      }
+    }
+  </script>
+
+</body>
+</html>
