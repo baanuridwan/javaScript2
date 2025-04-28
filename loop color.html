@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #dis1,
+        #read {
+            width: 100%;
+            height: fit-content;
+            padding: 20px 0;
+            background-color: black;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        #dis2,
+        #dis3 {
+            width: fit-content;
+            height: fit-content;
+            padding: 20px;
+            background-color: black;
+            color: #fff;
+        }
+
+        #dis4,#dis5{
+            width: 100px;
+            height: 100px;
+        }
+
+
+        #wrap {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        #wrpbtn {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="read">Enter either React, Javascript, Python, Java or C# class</div>
+        <input type="text" id="inpt">
+        <button onclick="show()">Click</button>
+        <div id="dis1"></div>
+    </div>
+
+
+    <div id="wrpbtn">
+        <button onclick="gene()">Create</button>
+        <div id="dis3"></div>
+    </div>
+
+    <div id="wrpbtn">
+        <button onclick="pigment()">Change</button>
+        <div id="dis4" style="background-color: #0082e6;"></div>
+    </div>
+
+    <div id="wrpbtn">
+        <button onclick="views()">View</button>
+        <div id="dis5" style="background-color: rgb(255, 0, 0);"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    //assignment
+    //r,js,p,j,c#
+    // do ex lvl2(1,2,3)
+
+    // *******************************************************SOLUTION 1
+    let reactClass = ["Tolu<br>", "Troy<br>", "Bolu<br>", "Takipi<br>", "May<br>", "Brian<br>", "Chat<br>", "Eunice<br>", "James<br>", "Gimba<br>", "Peter"]
+    let jsClass = ["Tolu<br>", "Troy<br>", "Bolu<br>", "Takipi<br>", "May<br>", "Brian<br>", "Chat<br>", "Eunice<br>", "James<br>", "Gimba<br>", "Peter<br>", "Paul<br>", "Samuel"]
+    let pyClass = ["Tolu<br>", "Troy<br>", "Bolu<br>", "Takipi<br>", "May<br>", "Brian<br>", "Chat<br>", "Eunice<br>", "James<br>", "Gimba<br>", "Peter<br>", "Paul<br>", "Samuel<br>", "Favour"]
+    let javaClass = ["Tolu<br>", "Troy<br>", "Bolu<br>", "Takipi<br>", "May<br>", "Brian<br>", "Chat<br>", "Eunice<br>", "James<br>", "Gimba<br>", "Peter<br>", "Paul<br>", "Samuel<br>", "Favour<br>", "Daniel"]
+    let csharpClass = ["Tolu<br>", "Troy<br>", "Bolu<br>", "Takipi<br>", "May<br>", "Brian<br>", "Chat<br>", "Eunice<br>", "James<br>", "Gimba"]
+    let input = document.getElementById("inpt")
+    function show() {
+        let val = input.value.trim().toUpperCase()
+        val = val.replaceAll(/\s/g, "");
+        let value = true
+        let show1 = document.getElementById("dis1")
+
+        for (let i = 0; i < javaClass.length; i++) {
+            if (!val) {
+                value = false
+            }
+            else if (val === "JAVACLASS" || val === "JAVA") {
+                console.log(javaClass[i]);
+                let wrd = javaClass.join("")
+                show1.innerHTML = wrd
+            }
+
+            else if (val === "REACTCLASS" || val === "REACT") {
+                if (i === reactClass.lenght) {
+                    break
+                }
+                console.log(reactClass[i]);
+                let wrd = reactClass.join("")
+                show1.innerHTML = wrd
+            }
+
+            else if (val === "JAVASCRIPTCLASS" || val === "JAVASCRIPT") {
+                if (i === jsClass.lenght) {
+                    break
+                }
+                console.log(jsClass[i]);
+                let wrd = jsClass.join("")
+                show1.innerHTML = wrd
+            }
+
+            else if (val === "PYTHONCLASS" || val === "PYTHON") {
+                if (i === pyClass.lenght) {
+                    break
+                }
+                console.log(pyClass[i]);
+                let wrd = pyClass.join("")
+                show1.innerHTML = wrd
+            }
+
+            else if (val === "C#CLASS" || val === "C#") {
+                if (i === csharpClass.lenght) {
+                    break
+                }
+                console.log(csharpClass[i]);
+                let wrd = csharpClass.join("")
+                show1.innerHTML = wrd
+            }
+
+            else {
+                value = false
+            }
+        }
+
+        if (!value) {
+            alert("Enter a valid class!")
+        }
+
+
+    }
+
+    // *******************************************************SOLUTION 2
+    let show2 = document.getElementById("dis2")
+
+
+
+    let show3 = document.getElementById("dis3")
+    function gene() {
+
+        let alph = "abcdefghijklmnopqrstuvwxyz0123456789"
+        let num2 = Math.floor(Math.random() * 7) + 5
+
+        for (let i = 0; i <= 1; i++) {
+            let space = ""
+            for (let x = 0; x <= num2; x++) {
+                space += alph.charAt(Math.floor(Math.random() * alph.length));
+                show3.innerHTML = space
+            }
+        }
+    }
+
+    let show4 = document.getElementById("dis4")
+    function pigment() {
+        let alph = "abcdef123456789"
+        let db = ["#"]
+        // let num2 = Math.floor(Math.random() * 4) + 3
+
+        let space = ""
+        for (let x = 0; x <= 2; x++) {
+            space += alph.charAt(Math.floor(Math.random() * alph.length))
+            db.push(space)
+            let val = db.join("")
+            show4.style.backgroundColor = val
+            show3.innerHTML = val
+        }
+    }
+
+    let show5 = document.getElementById("dis5")
+    function views() {
+        // let alph = "abcdef123456789"
+        let db = ["rgb("]
+        let db2 = []
+        db3 = [")"]
+        // let num2 = Math.floor(Math.random() * 4)
+        for (let j = 0; j <= 0; j++) {
+            let space = ""
+
+            for (let index = 0; index <= 255; index++) {
+                const val = index;
+                db2.push(val)
+            }
+
+            console.log(db2.sort());
+            // console.log(db2.reverse());
+
+
+        }
+
+        for (let j = 0; j <= 0; j++) {
+            space = ""
+            for (let i = 0; i <= 2; i++) {
+                let val = db2.join();
+                db3.push(db2[Math.floor(Math.random() * 256)])
+                
+                
+                // space += val.charAt(Math.floor(Math.random() * val.length))
+                // console.log(space);
+                db3.sort()
+            }
+            
+            
+            console.log(db3.reverse());
+            console.log(db.concat(db3));
+            
+            newdb = db.concat(db3)
+            let cont = newdb.join(",");
+            console.log(cont);
+            console.log(cont.replace(",", ""));
+            let chng = cont.replace(",", "")
+            let chng2 = chng.replace(",)", ")") // /, (?=\))/g means Find a comma that is immediately before a closing bracket ).
+            console.log(chng2);
+
+            show5.style.backgroundColor = chng2
+            show3.innerHTML = chng2
+            
+            // let sp = cont.charAt(4)
+            // let coma1 = cont.charAt(7)
+            // let coma2 = cont.charAt(10)
+            // console.log(sp);
+            // console.log(coma1);
+            // console.log(coma2);
+            // cont.replace(sp, "")
+            // cont.replace(coma1, ",")
+            // cont.replace(coma2, ",")
+            
+            
+        }
+    }
+</script>

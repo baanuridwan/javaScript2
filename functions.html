@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick=""></button>
+</body>
+</html>
+<script>
+
+    
+    function name() {
+        console.log("This is javascript")
+    }
+
+
+    function showMyName() {
+        let thisClass = 'javascript';
+        function disName() {
+            console.log(thisClass);
+        }
+        disName();
+    }
+    showMyName();
+
+
+    let searcher = "myClass";
+    function search() {
+        function displayer() {
+            console.log(searcher);
+        }
+        displayer();
+    }
+    search();
+
+
+    function printFullName (){
+      let firstName = 'Asabeneh'
+      let lastName = 'Yetayeh'
+      let space = ' '
+      let fullName = firstName + space + lastName
+      return fullName
+}
+console.log(printFullName())
+
+function addNum() {
+      let a = 10
+      let b = 20
+      let ans = a + b
+      return ans
+
+  }
+
+console.log(addNum())
+
+
+let username = `rid`
+  let password = `anyname`
+  let confPassword = `anyname`
+
+  function login() {
+    if (!username || !password || !confPassword) {
+      alert('Please fill all the fields')
+      return
+    }
+    if (password !== confPassword) {
+      alert('Password does not match')
+      return
+    }
+    alert('Login successful')
+  }
+  
+
+  
+  login()
+</script>

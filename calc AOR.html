@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h1>Calculate Area of Reactangle</h1>
+  <input type="text" id="length"/>
+  <input type="text" id="width"/>
+  <br />
+  <button onclick="calculateArea()">Calculate Area</button>
+  <div id="result"></div>
+</body>
+</html>
+<script>
+    function calculateArea() {
+      let length = +document.getElementById("length").value
+      let width = +document.getElementById("width").value
+
+      if (!length || !width) {
+        alert("Please enter valid numbers.")
+        return
+      }
+
+      let area = length * width;
+      document.getElementById("result").innerHTML = `Area: ${area}`
+
+    }
+    
+    
+</script>
