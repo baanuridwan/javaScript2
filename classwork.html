@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="btn1">
+    <input type="text" id="btn2">
+    <input type="text" id="btn3">
+    <button onclick="click()"></button>
+</body>
+</html>
+<script>
+    function click() {
+        let btn1 = document.getElementById("btn1").value.trim();
+        let btn2 = document.getElementById("btn2").value.trim();
+        let btn3 = document.getElementById("btn3").value.trim();
+
+        if (!btn1 || !btn2 || !btn3) {
+            alert("all fields are mandatory")
+            return
+        }
+        if (btn != btn2 && btn1 != btn3) {
+            alert("all fields are not same")
+            return
+            
+        }
+        if (btn1 == btn2 && btn1 == btn3) {
+            alert("all fields are same")
+            return
+            
+        }
+        if (btn1 == btn2 && btn1 != btn3) {
+            alert("btn1 and btn2 are same")
+            return
+            
+        }
+    }
+
+</script>

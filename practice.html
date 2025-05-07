@@ -1,0 +1,141 @@
+Sure! Here's a detailed line-by-line explanation of your JavaScript code:
+
+
+---
+
+Student Data Initialization
+
+let students = [
+  {
+    name: "Kareem Benzema",
+    course: "Cyber Security",
+    id: "000002",
+    img: "photo.jpg"
+  },
+  {
+    name: "Gareth Bale",
+    course: "Python",
+    id: "000003",
+    img: "photo2.jpg"
+  },
+  {
+    name: "Cristiano Ronaldo",
+    course: "Robotics",
+    id: "000004",
+    img: "photo3.jpg"
+  }
+];
+
+Declares an array students containing three objects.
+
+Each object represents a student with name, course, id, and img (image filename).
+
+
+
+---
+
+Index Tracking
+
+let index = 0
+
+Initializes a variable index to 0.
+
+This will track the currently displayed student in the students array.
+
+
+
+---
+
+Function: updateCard()
+
+function updateCard() {
+  let student = students[index]
+
+Retrieves the student object at the current index.
+
+
+let imgElement = document.getElementById("studentImg")
+  imgElement.src = student.img
+
+Gets the image element by ID studentImg.
+
+Sets its src to the student's image file.
+
+
+let nameElement = document.getElementById("studentName")
+  nameElement.innerHTML = student.name
+
+Updates the inner HTML of the element with ID studentName to show the student's name.
+
+
+let courseElement = document.getElementById("studentCourse")
+  courseElement.innerHTML = student.course
+
+Updates the course name similarly.
+
+
+let idElement = document.getElementById("studentId")
+  idElement.innerHTML = "Student ID | " + student.id
+}
+
+Displays the student's ID prefixed with the label "Student ID | ".
+
+
+
+---
+
+Function: next()
+
+function next() {
+  if (index === students.length - 1) {
+    index = 0
+  }
+  else {
+    index++
+  }  
+  updateCard()
+}
+
+If at the last student, reset index to 0 (loop to start).
+
+Otherwise, move to the next student (index++).
+
+Then call updateCard() to refresh the display.
+
+
+
+---
+
+Function: prev()
+
+function prev() {
+  if (index === 0) {
+    index = students.length - 1
+  }
+  else {
+    index--
+  }
+  updateCard()
+}
+
+If at the first student, wrap to the last one.
+
+Otherwise, go to the previous student.
+
+Then call updateCard() to update the display.
+
+
+
+---
+
+Initial Display
+
+updateCard()
+
+Immediately calls updateCard() to show the first student's data on page load.
+
+
+
+---
+
+Would you like a sample HTML layout that works with this script?

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #000d54;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 320px;
+      height: 480px;
+      padding: 20px;
+      background: white;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      display: block;
+    }
+
+    .school-name {
+      font-weight: bold;
+      font-size: 22px;
+      color: #000d54;
+      text-align: center;
+    }
+
+    .student-box {
+      background: #000d54;
+      color: white;
+      padding: 8px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .student-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+    }
+
+    .student-course {
+      color: red;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .student-info {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .website-box {
+      background: #000d54;
+      color: white;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      width: 110%;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 320px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      background-color: #000d54;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="sqilogo.jpg" alt="SQI Logo">
+    <h3 class="school-name">SQI COLLEGE OF ICT IBADAN</h3>
+    
+    <div class="student-box">STUDENT</div>
+
+    <img id="studentImg" class="student-img" src="" alt="Student Photo">
+    <div id="studentName" class="student-info"></div>
+    <span id="studentCourse" class="student-course"></span>
+    <div id="studentId" class="student-info"></div>
+
+    <div class="website-box">e d u  .s q i  .n g</div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="prev()">Previous</button>
+    <button onclick="next()">Next</button>
+  </div>
+
+<script>
+  let students = [
+    {
+      name: "Kareem Benzema",
+      course: "Cyber Security",
+      id: "000002",
+      img: "photo.jpg"
+    },
+    {
+      name: "Gareth Bale",
+      course: "Python",
+      id: "000003",
+      img: "photo2.jpg"
+    },
+    {
+      name: "Cristiano Ronaldo",
+      course: "Robotics",
+      id: "000004",
+      img: "photo3.jpg"
+    }
+  ];
+
+  let index = 0
+
+  // function updateCard() {
+  //   let student = students[index]
+  //   document.getElementById("studentImg").setAttribute("src", student.img)
+  //   document.getElementById("studentName").textContent = student.name
+  //   document.getElementById("studentCourse").textContent = student.course
+  //   document.getElementById("studentId").textContent = "Student ID | " + student.id
+  // }
+
+  function updateCard() {
+  let student = students[index]
+
+  let img = document.getElementById("studentImg")
+  img.src = student.img
+
+  let name = document.getElementById("studentName")
+  name.innerHTML = student.name
+
+  let course = document.getElementById("studentCourse")
+  course.innerHTML = student.course
+
+  let id = document.getElementById("studentId")
+  id.innerHTML = "Student ID | " + student.id
+}
+
+  function next() {
+    if (index === students.length - 1) {
+      index = 0
+    }
+    else {
+      index++
+
+    }  
+      updateCard()
+  }
+
+  function prev() {
+    if (index === 0) {
+      index = students.length - 1
+    }
+    else {
+      index--
+    }
+    updateCard()
+  }
+
+  updateCard()
+</script>
+
+</body>
+</html>

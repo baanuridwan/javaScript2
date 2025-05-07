@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #input {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-btn {
+      background: green;
+      color: white;
+    }
+
+    .add-btn:hover {
+      background: lightgreen;
+    }
+
+    .edit-btn {
+      background: green;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .edit-btn:hover {
+      background: lightgreen;
+    }
+
+    .delete-btn {
+      background: green;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .delete-btn:hover {
+      background: lightgreen;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .todo-text {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Todo List</h2>
+    <input type="text" id="input" placeholder="Enter a task">
+    <button class="add-btn" onclick="addTodo()">Add</button>
+    <div id="preview"></div>
+  </div>
+
+</body>
+</html>
+<script>
+    let database = []
+
+    function addTodo() {
+      let input = document.getElementById('input')
+      if (input.value.trim() === '') {
+        alert('Add a reminder to your list')
+      } else {
+        database.push(input.value.trim());
+        input.value = ''
+        display()
+      }
+    }
+
+    function edit(i) {
+      let newValue = prompt('Edit your todo:', database[i])
+      if (newValue && newValue.trim() !== '' && newValue !== database[i]) {
+        database.splice(i, 1, newValue.trim())
+        display()
+      } else {
+        alert('Please enter a new value.')
+      }
+    }
+
+    
+    function deleteTodo(index) {
+      database.splice(index, 1)
+      display()
+    }
+
+    function display() {
+      let preview = document.getElementById('preview')
+      preview.innerHTML = ''
+      for (let i = 0; i < database.length; i++) {
+        preview.innerHTML += `
+          <div class="todo-item">
+            <div class="todo-text">${database[i]}</div>
+            <div>
+              <button class="edit-btn" onclick="edit(${i})">Edit</button>
+              <button class="delete-btn" onclick="deleteTodo(${i})">Delete</button>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function display() {
+    preview.innerHTML = ''
+    for (let index = 0; index < database.length; index++) {
+        preview.innerHTML += `<p>${database[index]} <button onclick="edit(${index})"> edit </button> <button onclick="deleteTodo(${index})"> delete </button></p>`
+    }
+    
+}
+  
+</script>

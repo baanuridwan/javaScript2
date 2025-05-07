@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let newObj = {
+        name: 'Ridwan',
+        class: 'Javascript',
+        age: 20,
+        hobbies: ['coding', 'reading', 'gaming'],
+    }
+
+    newObj.isMarried = false
+    newObj.hobbies.push('swimming')
+    console.log(newObj)
+
+
+
+    console.log(newObj.name)
+    console.log(newObj.class)
+    console.log(newObj.age)
+    console.log(newObj.hobbies)
+    console.log(newObj.hobbies[0])
+
+    function showHobbies() {
+        console.log(`My hobbies are ${newObj.hobbies[0]}, ${newObj.hobbies[1]}, and ${newObj.hobbies[2]}`);
+        
+    }
+    showHobbies()
+
+   newObj.getInfo = function() {
+    return this.name
+   }
+   console.log(newObj.getInfo());
+   
+
+   newObj.getInfo = function() {
+    return this.hobbies.join(', ')
+   }
+    console.log(newObj.getInfo());
+
+    newObj.getInfo = function() {
+        
+    }
+    
+</script>

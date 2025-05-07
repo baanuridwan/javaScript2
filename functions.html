@@ -73,7 +73,117 @@ let username = `rid`
     alert('Login successful')
   }
   
-
-  
   login()
+
+
+
+
+  function areaCircle(params) {
+        let area = Math.PI * params * params;
+        console.log(area);
+    }
+    areaCircle(5)
+
+    let numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let numsArr2 = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+    function loop(arr) {
+        for (let index = 0; index < arr.length; index++) {
+            console.log(arr[index]);
+        }
+    }
+    loop(numsArr)
+    loop(numsArr2)
+
+    let javaClass = ["Mr Great", "Mr stud", "Mr samuel", "Mr joshua", "Mr mary"]
+    let reactClass = ["wisdom", "joshua", "mary", "timi"]
+    
+    function showClass(params) {
+        for (const element of  params) {
+            console.log(element);
+            
+        }
+    }
+    showClass(javaClass)
+    showClass(reactClass)
+
+
+
+    function addNum(params1, params2) {
+        console.log(params1 + " " + params2);
+        
+    }
+    addNum("Adebayo", "Joshua")
+
+
+    function sumAllNums() {
+        let sum = 0
+        for (let i = 0; i < arguments.length; i++) {
+            sum += arguments[i]
+        }
+        console.log(sum);
+        
+    }
+    sumAllNums(1, 2, 3, 4)
+
+
+
+    
+    let anonymosFun = function () {
+      console.log("This is an anonymos function");
+      
+    }
+    anonymosFun()
+
+    const square = function (n) {
+      return n * n
+    }
+    console.log(square(2));
+
+    let squaredNum = (function (n) {
+      console.log(n * n);
+      
+    })(10)
+
+    let thisClass = (function (params) {
+      console.log("params")
+    })(" This is javascript class")
+    
+    let addAllNum = (function () {
+      console.log(arguments)
+      let sum = 0
+      for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+      }
+      console.log(sum);
+      
+    })(1, 2, 3, 4, 5)
+
+    const arrowFunc = () => {
+      console.log("This is an arrow functiom");
+      
+    }
+    arrowFunc()
+
+    function showClassName(params = "Amazing Class") {
+      console.log(params)
+    }
+    showClassName()
+
+    function addTwoNum(a = 8, b = 2)  {
+      console.log(a + b);
+      
+    }
+    addTwoNum(4, 5)
+
+    const greetings = (name = 'peter')  => {
+      let message = name + 'welcome to 30 days of javascript'
+      return message
+    }
+
+    (function (name = 'peter') {
+    let message = name + ' welcome to 30 days of javascript';
+    console.log(message);
+})();
+
 </script>
